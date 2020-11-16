@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C67804A7-FB73-45E6-9609-B3C5C7DD4A79}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CryptSharp</RootNamespace>
+    <AssemblyName>CryptSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="lib\common\utility\BasicIO.cs" />
+    <Compile Include="lib\common\ciphers\DES.cs" />
+    <Compile Include="lib\common\ciphers\AES256.cs" />
+    <Compile Include="lib\common\ciphers\TripleDES.cs" />
+    <Compile Include="lib\common\FileCompression.cs" />
+    <Compile Include="lib\common\utility\KeyGenerator.cs" />
+    <Compile Include="lib\common\ciphers\RSA2048.cs" />
+    <Compile Include="lib\common\BinHeader.cs" />
+    <Compile Include="lib\common\utility\GeneralUtility.cs" />
+    <Compile Include="lib\common\IniFile.cs" />
+    <Compile Include="lib\common\hashalgorithms\RIPEMD160HMAC.cs" />
+    <Compile Include="lib\common\hashalgorithms\RIPEMD160.cs" />
+    <Compile Include="lib\common\hashalgorithms\SHA512HMAC.cs" />
+    <Compile Include="lib\common\hashalgorithms\SHA384HMAC.cs" />
+    <Compile Include="lib\common\hashalgorithms\SHA256HMAC.cs" />
+    <Compile Include="lib\common\hashalgorithms\SHA1HMAC.cs" />
+    <Compile Include="lib\common\WmiInterface.cs" />
+    <Compile Include="lib\common\utility\Randomizer.cs" />
+    <Compile Include="lib\common\hashalgorithms\MD5.cs" />
+    <Compile Include="lib\common\hashalgorithms\SHA1.cs" />
+    <Compile Include="lib\common\hashalgorithms\MD5HMAC.cs" />
+    <Compile Include="lib\common\hashalgorithms\SHA256.cs" />
+    <Compile Include="lib\common\hashalgorithms\SHA384.cs" />
+    <Compile Include="lib\common\hashalgorithms\SHA512.cs" />
+    <Compile Include="CryptSharp.cs" />
+    <Compile Include="lib\common\RegistryManager.cs" />
+    <Compile Include="lib\implementations\binheader\Creator.cs" />
+    <Compile Include="lib\implementations\binheader\Reader.cs" />
+    <Compile Include="lib\implementations\binheader\BinarySignature.cs" />
+    <Compile Include="lib\implementations\psi\statics\ArrayConverter.cs" />
+    <Compile Include="lib\implementations\psi\crypt\ByteGrid.cs" />
+    <Compile Include="lib\implementations\psi\statics\ByteInverter.cs" />
+    <Compile Include="lib\implementations\psi\crypt\ByteSplitterDecrypt.cs" />
+    <Compile Include="lib\implementations\psi\crypt\ByteSplitterEncrypt.cs" />
+    <Compile Include="lib\implementations\psi\crypt\Decryptor.cs" />
+    <Compile Include="lib\implementations\psi\statics\Definitions.cs" />
+    <Compile Include="lib\implementations\psi\crypt\Encryptor.cs" />
+    <Compile Include="lib\implementations\psi\utility\HashFunction.cs" />
+    <Compile Include="lib\implementations\psi\utility\UsageHelper_Crypto.cs" />
+    <Compile Include="lib\implementations\psi\utility\UsageHelper_Hash.cs" />
+    <Compile Include="lib\common\utility\Base64.cs" />
+    <Compile Include="lib\CipherRegister.cs" />
+    <Compile Include="lib\HashAlgorithmRegister.cs" />
+    <Compile Include="lib\BasicUtilityRegister.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
